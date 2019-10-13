@@ -9,4 +9,6 @@ struct message {
 
 int main()
 {
+  pid_t pid;
+  
 }
