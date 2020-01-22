@@ -1,0 +1,30 @@
+1) A 'class' in C++ is extension of name 'struct' in C.
+2) Abstrct Data Type (ADT) :
+	Abstract Data Type is set of values and operations that define the type. 
+  --> The definitions of ADT will define what operations are to be performed but not how those operations will be implemented.
+  --> It does not specify how data will be organized in memory and what algorithms used for implementing the operations.
+3) The type is abstract in that it is described without implementation.
+4) C++ classes bundle data declarations with function declarations, thereby coupling data with behavior.
+
+CLASS && STRUCT
+------------------------------------------------------------------------------------------------------------------------------------
+1) class or struct used to aggreagte components into single named variables.
+2) pointer_to_structure -> member_name is same as (*pointer_to_structure).member_name.
+
+MEMBER FUNCTIONS
+------------------------------------------------------------------------------------------------------------------------------------
+1) C++ allows functions to be members where as C allows only data members.
+2) Functionality Required by class or structure should often be  directly in the same class or struct declaration. Such functions are called member functions() or class functions.
+3) Member functions that are defined in struct are implicitly inline.  
+4) To define member function outside the struct, the scope resolution operator should be used.
+
+ACCESS: PUBLIC and PRIVATE
+------------------------------------------------------------------------------------------------------------------------------------
+1) Structures have public and private members.
+2) The private members can be used by only few categories of functions. The class member functions can be private members, and friend functions of that class can access this friend functions.
+
+CLASSES
+------------------------------------------------------------------------------------------------------------------------------------
+1) Classes have default privacy specification of private, in contrast to structures defined with struct, which have default specification of public.
+2) 
+ 

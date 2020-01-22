@@ -16,7 +16,6 @@ void StraightMaxMin(int a[], int sz)
 	cout << "max = " << max << " min = " << min << endl;
 }
 
-/*
 void DandCMaxMinIterative(int a[], int n)
 {
 	int low = 0, high = n-1;
@@ -43,7 +42,7 @@ void DandCMaxMinIterative(int a[], int n)
 			
 
 	}
-}*/
+}
 
 
 

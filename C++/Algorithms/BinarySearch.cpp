@@ -1,5 +1,5 @@
 /* 
- * Author : PradeepThota
+ * Author : Pradeep Thota
  * This is the sample program for searching  an element in a sorted array 
  * Binary search takes "O(log N)" time to search an element in a sorted array 
  */
@@ -11,7 +11,9 @@ int BinarySearch(int arr[], int low, int high, int x)
 {
 	while(high > low)
 	{
-		int mid = (low + high)/2;
+		//int mid = (low + high)/2; // This May go Out Of Range if low and  high are maximum values
+
+		int mid = high + (high-low) / 2;
 		if(arr[mid] == x)
 			return mid;
 		else if (x < arr[mid])
@@ -19,7 +21,7 @@ int BinarySearch(int arr[], int low, int high, int x)
 		else
 			return BinarySearch(arr, mid+1, high, x);
 	}
-	return -1;
+	return -1; // If search fails 
 }
 
 

@@ -1,0 +1,130 @@
+DEFAULT ARGS
+------------------------------------------------------------------------------------------------------------------------------------
+1) Formal parameter can be given default value/argument.
+2) Default argument is placed in the function header by using initializing syntax whith in the argument list one or more of its right most parameters.
+3) DA's are not supported in C/Java.
+
+FUNCTIONS AS ARGUMENTS
+------------------------------------------------------------------------------------------------------------------------------------
+1) Can be thought of as Addresses of compiled code residing in memory.
+2) Functions are like Pointers, And can be passed as pointer value argument into another function
+
+
+OVERLOADING FUNCTIONS
+------------------------------------------------------------------------------------------------------------------------------------
+1) Definition :
+      Multiple Definitions for same function name within the same scope.
+2) Overloaded functions must  differ in argument list or type or both.
+3) Compiler chooses the function with matching types and arguments.
+4) Drawback : 
+     i) Multiple functions with same name can often be confusing.
+    ii) It is not apparent(cleary visible/understood) to the programmer which version of the program is being called.
+
+INLINING
+------------------------------------------------------------------------------------------------------------------------------------
+1) Keyword 'inline' can be placed at the begining of function declaration. It tells the compiler to attept to replace the function call with function body code.
+2) Advantage : 
+      Avoids function call invocation sothat the execution time of simple functios will not cause much delay (In other words, substantial increase of speed of execution).
+3) Drawback :
+     The executable size of program may increase.
+4) Compiler limitation prevent complecated functions such as recursive, from being inlined.
+5) Semantics Provided for both inline and non inline functions are same.
+
+MACROS 
+------------------------------------------------------------------------------------------------------------------------------------
+ --> A preprocessor 'define' directive causes the preprocessor to make the token visible in its scope.
+ --> A preprocessor 'undef'  directive causes the preprocessor to end the scope of a preprocessor definition.
+ --> The # operator converts a parameter into character string literal. 
+ --> The ## (double number sign) operator concatenates two tokens in a macro invocation (text and/or arguments) given in a macro definition.
+ --> If more than one ## operator and/or # operator appears in the replacement list of a macro definition, the order of evaluation of the operators is not defined.
+
+ Q) Why should we use avoiding macros in C++?
+ Ans:
+      Macro expansion will not provide any type safety as it is given by C++ parameter mechanism. Because macro arguments has no type, no assignment type conversions are applied.
+
+NAMESPACES
+------------------------------------------------------------------------------------------------------------------------------------
+1) There can't be same variables within the same scope. Using namespaces we can create two variables/member functions having the same name.
+2) Definition : 
+      A namespace is a declarative region that provides a scope to the identifiers (names of the types, function, variables etc) inside it.
+3) Namespaces can also be nested. 
+   Ex: 
+     namespace Test {
+        int n;
+        namespace dolls { 
+           int square () { return n * n; }; //Test::n
+       }
+    }
+4) Anonymous Namespacing :
+   //TODO:
+
+POINTER TYPES
+------------------------------------------------------------------------------------------------------------------------------------
+1) Used to reference variables, machine addresses.
+2) Used with unary operator '&' has associativity 'Right to Left'.
+3) Compiler will decide that, which address it should assign to a pointer.
+4) Pointer value 0 (Zero) indicates the end of dynamic data structures, such as tree, list, etc.
+5) Reference Declarations are not present in C. Declare the identifier name as alternative name or alias for an object specified in an initialization of the reference.
+6) Declarations of references that are definitions must be initialized.
+7) When function arguments are to remain unmodified, it can be efficient and correct to pass them const call-by-reference. 
+
+USE OF VOID  
+------------------------------------------------------------------------------------------------------------------------------------
+1) In Programming, A function with void return type called as Pure Procedure.
+2) Dereferencing is, the operation '*' acting on pointer value to obtain what it is pointed at.
+3) Dereferencing void pointer is not allowed.
+ void *p; // Generic Pointer
+4) The type size_t is defined in cstddef and is often a synonym for unsigned int.
+Example:
+  void *gp; // Generic Pointer
+  int *ip; // Integer Pointer
+  char *cp; // Character Pointer
+  gp = ip; // Legal Assignment
+  ip = reinterpret_cast <int *> gp; // Legal	
+  cp = ip; // Illegal 
+
+  *ip = 5; // Legal Dereferencing 
+  *ip = *gp; // Illegal Dereferencing
+
+ARRAYS
+------------------------------------------------------------------------------------------------------------------------------------
+1) Array Name is a pointer constant to the base address.
+2) When the list of initializers is shorter than the size of the array, the remaining elements are initialized to 0.
+
+Note:
+1) Random Numbers are quite oftenly used in computer science while solving problems. They can be used to test the code; another use is to simulate thereal world event that involves probability. 
+2) Key Problem solving technique is code(tested) reusability. 
+
+
+ADT: char* String
+------------------------------------------------------------------------------------------------------------------------------------
+1) C++ community treats char*  as string type. <cstring> / string.h packaage of functions called using this type.
+2) strings are terminated by char value '\0'.
+3) char* or char[] can be initialized with the string litteral.
+
+OPERATORS new & delete
+------------------------------------------------------------------------------------------------------------------------------------
+1) new and delete are available to manipulate free store.
+2) free store: 
+	Free store is memory pool for objects whose lifetime is directly managed by the programmer.
+3) Examples: 
+	new typename;
+	new typenameInitializer;
+	new typename[expression];
+        --> First, The appropriate amount of store is allocated.
+        --> Second, The base address of the object is returned as the value of new expression.
+4) If no memory is free, new will throw bad_alloc() or 0 (zero).
+5) The operator delete destroys the objects created by new.
+   Examples:
+	delete expression;
+	delete[] expression;
+   --> The operator delete does not return a value.
+
+--> C++ Standard Library provides both cstring and string libraries for strings processing and they can be used jointly.
+
+--> Overloading is frequently overused, making code difficult to follow and debug. In the extreme, by using function foo() with different signatures, one can produce any computation—clearly a poor programming practice.
+
+Q) Why overloading of methods not possible with return type?
+ans:
+	--> Only return type of function alone is not sufficient for the compiler to figureout which function to call.
+	--> Return Type is not part of method signature, So overloading methods only with return type is not possible.

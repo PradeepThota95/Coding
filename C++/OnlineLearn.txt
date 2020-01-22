@@ -1,0 +1,23 @@
+Cout is predefined object available in ostream class. ostream class is available in <iostream.h>
+
+Manipulators are used in cout to change the output result.
+Types of Manipulators: 
+	Manipulator Operator (endl, ends)
+	Manipulator Functions (set precission(), set fill(), setiosflags()) are avalilabke in <iomanip> except.
+
+Manipulator Functions:
+Used for formatted output 
+
+1) setw() : set width going to allocating specified number of spaces on the screen and going to print the text in right to left. 
+2) setfull(): It will work only with setw(). 
+	      Needs to be reset after competing the desired operation.
+
+3) setprecission(int x): 
+--> It does not work for Integer values.
+--> Prints the x number of decimal.
+
+4) setbase() 
+	Using this we can change the numbers from one format to another format.
+
+5) setiosflags():
+	To set the different types of flags.
